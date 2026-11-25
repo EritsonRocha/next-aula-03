@@ -1,4 +1,4 @@
-import Contador from "@/components/Contador/page"
+import Contador from "@/components/Contador/contador"
 import FetchUser from "@/components/FetchUser/FetchUser"
 import FetchUsers from "@/components/FetchUsers/FetchUsers"
 import InputEcho from "@/components/InputEcho/InputEcho"
@@ -28,14 +28,13 @@ export default function HooksPage() {
 
             <Contador />
             
-            {/* <InputEcho /> */}
+            <InputEcho />
 
-            
-            {/* <SeletorTecno /> */}
+            <SeletorTecno />
 
-            {/* <Tarefas /> */}
+            <Tarefas />
 
-            {/* <Tecnologias /> */}
+            <Tecnologias />
 
             {/* <FetchUser /> */}
 

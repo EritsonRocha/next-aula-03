@@ -6,12 +6,21 @@ export default function Tarefas() {
     //
     // A. Gestão de estados
     const [novaTarefa, setNovaTarefa] = useState<string>("")
+
+    const [listaTarefas, setListaTarefas] = useState<String[]>([])
     // tarefas, lista de tarefas
 
 
     //
     // B. event handlers (interação do utilizador)
+    function atualizaListaTarefas() {
+        setListaTarefas([...listaTarefas, novaTarefa]);
+        setNovaTarefa("")
+    }
 
+    function limpaListaTarefas() {
+        setListaTarefas ([])
+    }
 
     //
     // C. renderização de componentes
@@ -29,18 +38,24 @@ export default function Tarefas() {
             />
             <button
                 className="bg-green-500 hover:bg-green-600 active:bg-green-700 hover:pointer text-white font-bold py-2 px-4 m-2 border border-green-700 rounded"
-                // onClick = 
+                onClick = {atualizaListaTarefas}
             >
                 Adicionar
             </button>
 
+            <button
+                className="bg-green-500 hover:bg-green-600 active:bg-green-700 hover:pointer text-white font-bold py-2 px-4 m-2 border border-green-700 rounded"
+                onClick = {limpaListaTarefas}
+            >
+                Limpar
+            </button>
             
             <p>Lista de Tarefas:</p>
-            {/* 
+            
             <ul>
-                {tarefas.map((tarefa,index) => <li key={index}>{tarefa}</li> )}
+                {listaTarefas.map((tarefa,index) => <li key={index}>{tarefa}</li> )}
             </ul> 
-            */}
+           
         </section>
     )
 }
